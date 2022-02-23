@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 
-
 @Entity
 @Table(name = "categoria")
 public class Categoria {
@@ -59,6 +58,6 @@ public class Categoria {
             return false;
         return true;
     }
+}
 
     
-}
