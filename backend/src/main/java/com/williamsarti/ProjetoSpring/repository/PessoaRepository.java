@@ -1,12 +1,9 @@
 package com.williamsarti.ProjetoSpring.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.williamsarti.ProjetoSpring.model.Pessoa;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
-@Repository
 public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
-    
+
 }
