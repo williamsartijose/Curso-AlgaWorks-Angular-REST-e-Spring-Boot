@@ -1,6 +1,7 @@
 package com.williamsarti.ProjetoSpring.repository.lancamento;
 
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import com.williamsarti.ProjetoSpring.model.Lancamento;
 import com.williamsarti.ProjetoSpring.repository.filter.LancamentoFilter;
@@ -8,7 +9,8 @@ import com.williamsarti.ProjetoSpring.repository.filter.LancamentoFilter;
 public interface LancamentoRepositoryQuery
 {
 
-    public List<Lancamento> filtrar(
-        LancamentoFilter lancamentoFilter );
+    public Page<Lancamento> filtrar(
+        LancamentoFilter lancamentoFilter,
+        Pageable pageable );
 
 }
