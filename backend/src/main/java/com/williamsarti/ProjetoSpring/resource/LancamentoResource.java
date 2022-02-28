@@ -24,6 +24,7 @@ import com.williamsarti.ProjetoSpring.event.RecursoCriadoEvent;
 import com.williamsarti.ProjetoSpring.exception.PessoaInexistenteOuInativaException;
 import com.williamsarti.ProjetoSpring.model.Lancamento;
 import com.williamsarti.ProjetoSpring.repository.LancamentoRepository;
+import com.williamsarti.ProjetoSpring.repository.filter.LancamentoFilter;
 import com.williamsarti.ProjetoSpring.service.LancamentoService;
 
 import exceptionHandler.AlgamoneyExceptionHandler.Erro;
@@ -46,9 +47,10 @@ public class LancamentoResource
     private MessageSource messageSource;
 
     @GetMapping
-    public List<Lancamento> listar()
+    public List<Lancamento> pesquisar(
+        LancamentoFilter lancamentoFilter )
     {
-        return lancamentoRepository.findAll();
+        return lancamentoRepository.filtrar( lancamentoFilter );
     }
 
     @GetMapping( "/{codigo}" )

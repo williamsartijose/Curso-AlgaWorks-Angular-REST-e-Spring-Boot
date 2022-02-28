@@ -87,7 +87,14 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.4</version>
 		</dependency>
-	</dependencies>
+	
+	
+	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-jpamodelgen -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-jpamodelgen</artifactId>
+</dependency>
+</dependencies>
 
 	<build>
 		<plugins>
