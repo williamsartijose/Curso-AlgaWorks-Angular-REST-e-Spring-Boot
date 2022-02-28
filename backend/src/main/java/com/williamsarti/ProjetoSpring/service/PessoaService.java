@@ -19,13 +19,29 @@ public class PessoaService
         Long codigo,
         Pessoa pessoa )
     {
+        final Pessoa pessoaSalva = buscarPessoaPeloCodigo( codigo );
+
+        BeanUtils.copyProperties( pessoa, pessoaSalva, "codigo" );
+        return pessoaRepository.save( pessoaSalva );
+    }
+
+    public void atualizarPropriedadeAtivo(
+        Long codigo,
+        Boolean ativo )
+    {
+        final Pessoa pessoaSalva = buscarPessoaPeloCodigo( codigo );
+        pessoaSalva.setAtivo( ativo );
+        pessoaRepository.save( pessoaSalva );
+    }
+
+    public Pessoa buscarPessoaPeloCodigo(
+        Long codigo )
+    {
         final Pessoa pessoaSalva = pessoaRepository.findOne( codigo );
         if( pessoaSalva == null ) {
             throw new EmptyResultDataAccessException( 1 );
         }
-
-        BeanUtils.copyProperties( pessoa, pessoaSalva, "codigo" );
-        return pessoaRepository.save( pessoaSalva );
+        return pessoaSalva;
     }
 
 }
