@@ -24,8 +24,7 @@
 
     <div class="p-grid">
       <div class="p-col-12">
-        <p-table [value]="lancamentos">
-          <ng-template pTemplate="header">
+        <p-table [value]="lancamentos" [paginator]="true" [rows]="5">          <ng-template pTemplate="header">
             <tr>
               <th>Pessoa</th>
               <th>Descrição</th>
@@ -51,5 +50,6 @@
       </div>
     </div>
 
+    <a pButton label="Novo Lançamento"></a>
   </div>
 </div>
