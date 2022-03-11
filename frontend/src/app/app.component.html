@@ -24,13 +24,15 @@
 
     <div class="p-grid">
       <div class="p-col-12">
-        <p-table [value]="lancamentos" [paginator]="true" [rows]="5">          <ng-template pTemplate="header">
+        <p-table [value]="lancamentos" [paginator]="true" [rows]="5">
+          <ng-template pTemplate="header">
             <tr>
               <th>Pessoa</th>
               <th>Descrição</th>
               <th class="col-data-header">Vencimento</th>
               <th class="col-data-header">Pagamento</th>
               <th class="col-valor-header">Valor</th>
+              <th class="col-acoes"></th>
             </tr>
           </ng-template>
           <ng-template pTemplate="body" let-lancamento>
@@ -39,10 +41,12 @@
               <td>{{ lancamento.descricao }}</td>
               <td class="col-data-content">{{ lancamento.dataVencimento }}</td>
               <td class="col-data-content">{{ lancamento.dataPagamento }}</td>
-              <td class="col-valor-content" [style.color]="lancamento.tipo === 'DESPESA' ? 'red' : 'blue'">{{ lancamento.valor }}</td>
+              <td class="col-valor-content" [ngStyle]="{color: lancamento.tipo === 'DESPESA' ? 'red' : 'blue'}">
+                {{ lancamento.valor }}
+              </td>
               <td class="col-acoes">
-                <a pButton icon="pi pi-pencil"></a>
-                <button pButton icon="pi pi-trash"></button>
+                <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"></a>
+                <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"></button>
               </td>
             </tr>
           </ng-template>
@@ -51,5 +55,6 @@
     </div>
 
     <a pButton label="Novo Lançamento"></a>
+
   </div>
 </div>
