@@ -9,7 +9,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { TableModule } from 'primeng/table';
 import { TabViewModule } from 'primeng/tabview';
 import { TooltipModule } from 'primeng/tooltip';
-
+import { SelectButtonModule } from 'primeng/selectbutton';
 import { AppComponent } from './app.component';
 import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
 import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos-pesquisa.component';
@@ -29,7 +29,7 @@ import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.co
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-
+    SelectButtonModule,
     ButtonModule,
     CalendarModule,
     InputTextModule,
